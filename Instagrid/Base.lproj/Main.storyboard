@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8X8-0w-GYK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8X8-0w-GYK">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -87,8 +87,8 @@
                                             <mask key="constraints">
                                                 <exclude reference="USU-rD-Tgk"/>
                                                 <exclude reference="WqS-Ip-Tlp"/>
-                                                <exclude reference="nbc-V4-orE"/>
                                                 <exclude reference="RuY-hW-xbE"/>
+                                                <exclude reference="nbc-V4-orE"/>
                                                 <exclude reference="Z8q-Hw-8Hb"/>
                                                 <exclude reference="wJ2-Sz-70s"/>
                                                 <exclude reference="bO1-b5-1B4"/>
@@ -121,8 +121,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="hhU-AT-rve"/>
                                         <exclude reference="cqa-6x-dc2"/>
+                                        <exclude reference="hhU-AT-rve"/>
                                         <exclude reference="SKs-pa-2vB"/>
                                         <exclude reference="z6T-fU-yS1"/>
                                     </mask>
@@ -184,8 +184,8 @@
                                     <mask key="constraints">
                                         <exclude reference="1Q0-YB-3h3"/>
                                         <exclude reference="dkJ-PD-BhG"/>
-                                        <exclude reference="mRd-Oo-FnW"/>
                                         <exclude reference="1uG-ta-qil"/>
+                                        <exclude reference="mRd-Oo-FnW"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact" axis="vertical">
@@ -242,14 +242,14 @@
                                 <exclude reference="wPu-FF-RVE"/>
                                 <exclude reference="B3f-5h-eoi"/>
                                 <exclude reference="PQz-pj-IWa"/>
+                                <exclude reference="sdk-gd-FXs"/>
+                                <exclude reference="WEV-4a-ach"/>
                                 <exclude reference="jTd-O8-4eK"/>
                                 <exclude reference="u3P-Jw-nNN"/>
                                 <exclude reference="2Br-C0-ZTy"/>
                                 <exclude reference="lnp-TL-Qus"/>
-                                <exclude reference="sdk-gd-FXs"/>
-                                <exclude reference="WEV-4a-ach"/>
-                                <exclude reference="HxY-mQ-Ict"/>
                                 <exclude reference="BE5-yV-UpD"/>
+                                <exclude reference="HxY-mQ-Ict"/>
                                 <exclude reference="p27-Qy-zi5"/>
                                 <exclude reference="D1A-Fk-zkZ"/>
                                 <exclude reference="O8t-B3-RGD"/>
@@ -281,16 +281,22 @@
                                 <include reference="AHp-06-ZnQ"/>
                                 <include reference="wPu-FF-RVE"/>
                                 <include reference="PQz-pj-IWa"/>
-                                <include reference="jTd-O8-4eK"/>
-                                <include reference="lnp-TL-Qus"/>
                                 <include reference="sdk-gd-FXs"/>
                                 <include reference="WEV-4a-ach"/>
+                                <include reference="jTd-O8-4eK"/>
+                                <include reference="lnp-TL-Qus"/>
                                 <include reference="BE5-yV-UpD"/>
                                 <include reference="w10-5r-Trq"/>
                                 <include reference="6Te-G5-evF"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="ImgButton1" destination="Rik-S4-pbu" id="4YG-g9-cIa"/>
+                        <outlet property="ImgButton2" destination="vkd-op-cCB" id="wzK-kv-BLw"/>
+                        <outlet property="ImgButton3" destination="L0f-iv-s8b" id="IZn-CK-1GT"/>
+                        <outlet property="ImgButton4" destination="fkI-zv-3qz" id="hHQ-hb-glH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9O-Wa-bfz" sceneMemberID="firstResponder"/>
             </objects>
