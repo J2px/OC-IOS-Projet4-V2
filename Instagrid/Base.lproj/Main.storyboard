@@ -296,6 +296,7 @@
                         <outlet property="ImgButton2" destination="vkd-op-cCB" id="wzK-kv-BLw"/>
                         <outlet property="ImgButton3" destination="L0f-iv-s8b" id="IZn-CK-1GT"/>
                         <outlet property="ImgButton4" destination="fkI-zv-3qz" id="hHQ-hb-glH"/>
+                        <outlet property="stackView" destination="ZDg-g1-kkG" id="NbB-gV-AWY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9O-Wa-bfz" sceneMemberID="firstResponder"/>
