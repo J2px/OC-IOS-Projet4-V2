@@ -40,6 +40,9 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="Plus"/>
+                                                                <connections>
+                                                                    <action selector="buttonAction1:" destination="8X8-0w-GYK" eventType="touchUpInside" id="y1c-KX-6fr"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkd-op-cCB">
                                                                 <rect key="frame" x="142.33333333333334" y="0.0" width="127.66666666666666" height="127.66666666666667"/>
@@ -47,6 +50,9 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="Plus"/>
+                                                                <connections>
+                                                                    <action selector="buttonAction2:" destination="8X8-0w-GYK" eventType="touchUpInside" id="UMn-4F-xoP"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -59,6 +65,9 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="Plus"/>
+                                                                <connections>
+                                                                    <action selector="buttonAction3:" destination="8X8-0w-GYK" eventType="touchUpInside" id="mQK-Um-NKR"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkI-zv-3qz">
                                                                 <rect key="frame" x="142.33333333333334" y="0.0" width="127.66666666666666" height="127.33333333333333"/>
@@ -66,6 +75,9 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="Plus"/>
+                                                                <connections>
+                                                                    <action selector="buttonAction4:" destination="8X8-0w-GYK" eventType="touchUpInside" id="dH0-UE-5jg"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>

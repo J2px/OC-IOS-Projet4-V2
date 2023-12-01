@@ -9,59 +9,62 @@ import UIKit
 
 class OptionItemView: UIView {
     
-    private var choiceImg1 : UIImageView!
-    private var choiceImg2 : UIImageView!
-    private var choiceImg3 : UIImageView!
-    private var selectedView : UIImageView!
+    var choiceImg: UIImageView!
+    var selectedView: UIImageView!
     
     
-    enum Choice: CaseIterable {
+    enum Choices: CaseIterable {
         case choice1, choice2, choice3
     }
     
-    var choice: Choice = .choice1 {
+    var choice: Choices = .choice1 {
         didSet {
-            setChoices(choice)
+            
+            guard let choiceImg = choiceImg else {
+                            return
+                        }
+
+            switch choice {
+            case .choice1:
+                choiceImg.image = UIImage(named: "Layout 1")
+                
+            case .choice2:
+                choiceImg.image = UIImage(named: "Layout 2")
+                
+            case .choice3:
+                choiceImg.image = UIImage(named: "Layout 3")
+            }
         }
     }
     
     
     
     override init(frame: CGRect) {
-        <#code#>
+        super.init(frame: frame)
+        setChoices()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setChoices()
     }
     
-    private func setChoices(_ choice: Choice){
-        switch choice {
-        case .choice1: 
-    choiceImg1.image = UIImage(named: "Layout_1")
-            initOptionImageView(choice: choiceImg1)
-    initSelectedImageView()
-    case .choice2:
-    choiceImg2.image = UIImage(named: "Layout_2")
-            initOptionImageView(choice: choiceImg2)
-    initSelectedImageView()
-    case .choice3:
-    choiceImg3.image = UIImage(named: "Layout_3")
-            initOptionImageView(choice: choiceImg3)
-    initSelectedImageView()
-    }
+    private func setChoices(){
+        initSelectedImageView()
+        initSelectedImageView()
         
     }
     
     private func initOptionImageView(choice: UIImageView) {
-        choice.contentMode = .scaleToFill
-        choice.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(choice)
+        choiceImg = UIImageView()
+        choiceImg.contentMode = .scaleToFill
+        choiceImg.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(choiceImg)
         NSLayoutConstraint.activate([
-            choice.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            choice.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
-            choice.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            choice.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0)
+            choiceImg.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            choiceImg.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            choiceImg.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            choiceImg.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0)
         ])
     }
     
@@ -78,12 +81,12 @@ class OptionItemView: UIView {
             selectedView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             selectedView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0)
         ])
-        isSelected(selectedView: selectedView)
+        //isSelected(selectedView: selectedView)
     }
         
-    private func isSelected(selectedView : UIImageView) {
+    /*private func isSelected(selectedView : UIImageView) {
         selectedView.isHidden = false
-    }
+    }*/
     
     
 }
