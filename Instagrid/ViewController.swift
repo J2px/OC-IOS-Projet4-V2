@@ -31,7 +31,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //controlGesture(button: ImgButton2)
         //controlGesture(button: ImgButton3)
         //controlGesture(button: ImgButton4)
-        controlChoices()
+        setupChoices()
         
         imagePicker.delegate = self
         
@@ -78,31 +78,39 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         button.addGestureRecognizer(tapGesture)
     }*/
     
+    private var allOptionsView: [OptionItemView] = []
     
-    private func controlChoices(){
+    private func setupChoices(){
         let allLayouts = OptionItemView.Choices.allCases
-        var allOptions = [createOption()]
         
         // Append Option in stackView
         for optionLayout in allLayouts {
-            let option = createOption()
-            option.choice = optionLayout
+            let option = createOptionView(choice: optionLayout)
+            allOptionsView.append(option)
             self.stackView.addArrangedSubview(option)
-            allOptions.append(option)
-            
-            
         }
     }
     
     
-    private func createOption() -> OptionItemView {
-        let option = OptionItemView(frame: CGRect.zero)
+    private func createOptionView(choice: OptionItemView.Choices) -> OptionItemView {
+        let option = OptionItemView(choice: choice, frame: CGRect.zero)
         option.translatesAutoresizingMaskIntoConstraints = false
+        option.onTapAction = {
+            self.deselectAll()
+            option.isSelected = true
+            // TODO: Changer le format de la vue centrale 
+        }
         NSLayoutConstraint.activate([
             option.widthAnchor.constraint(equalToConstant: 80),
             option.heightAnchor.constraint(equalToConstant: 80)
         ])
         return option
+    }
+    
+    private func deselectAll() {
+        allOptionsView.forEach { option in
+            option.deselectOption()
+        }
     }
     
     private func makeChoice(choice: OptionItemView.Choices){

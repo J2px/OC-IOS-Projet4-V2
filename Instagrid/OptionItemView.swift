@@ -9,21 +9,22 @@ import UIKit
 
 class OptionItemView: UIView {
     
-    var choiceImg: UIImageView!
-    var selectedView: UIImageView!
-    
+    private var choiceImg: UIImageView!
+    private var selectedView: UIImageView!
+    private var actionButton: UIButton!
     
     enum Choices: CaseIterable {
         case choice1, choice2, choice3
     }
     
+    var isSelected: Bool = false {
+        didSet {
+            selectedView.isHidden = !isSelected
+        }
+    }
+    
     var choice: Choices = .choice1 {
         didSet {
-            
-            guard let choiceImg = choiceImg else {
-                            return
-                        }
-
             switch choice {
             case .choice1:
                 choiceImg.image = UIImage(named: "Layout 1")
@@ -37,25 +38,24 @@ class OptionItemView: UIView {
         }
     }
     
+    var onTapAction: (() -> Void)?
     
-    
-    override init(frame: CGRect) {
+    init(choice: Choices, frame: CGRect) {
         super.init(frame: frame)
-        setChoices()
+        initOptionImageView()
+        initSelectedImageView()
+        initAction()
+        defer {
+            // Call the didSet
+            self.choice = choice
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setChoices()
+        fatalError()
     }
     
-    private func setChoices(){
-        initSelectedImageView()
-        initSelectedImageView()
-        
-    }
-    
-    private func initOptionImageView(choice: UIImageView) {
+    private func initOptionImageView() {
         choiceImg = UIImageView()
         choiceImg.contentMode = .scaleToFill
         choiceImg.translatesAutoresizingMaskIntoConstraints = false
@@ -81,12 +81,32 @@ class OptionItemView: UIView {
             selectedView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             selectedView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0)
         ])
-        //isSelected(selectedView: selectedView)
+        self.isSelected = false
     }
-        
-    /*private func isSelected(selectedView : UIImageView) {
-        selectedView.isHidden = false
-    }*/
     
+    private func initAction() {
+        actionButton = UIButton()
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(actionButton)
+        NSLayoutConstraint.activate([
+            actionButton.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            actionButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            actionButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            actionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0)
+        ])
+        actionButton.addTarget(self, action: #selector(onAction), for: .touchUpInside)
+    }
     
+    // MARK: - Public
+    @objc public func onAction() {
+        onTapAction?()
+    }
+    
+    @objc public func selectOption() {
+        self.isSelected = true
+    }
+    
+    @objc public func deselectOption() {
+        self.isSelected = false
+    }
 }
