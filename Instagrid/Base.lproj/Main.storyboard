@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrj-h6-neX">
-                                <rect key="frame" x="0.0" y="94" width="393" height="36"/>
+                                <rect key="frame" x="140.33333333333334" y="94" width="112.66666666666666" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -217,7 +217,7 @@
                         <viewLayoutGuide key="safeArea" id="mWl-eJ-fIW"/>
                         <color key="backgroundColor" red="0.71764705880000002" green="0.84313725490000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mWl-eJ-fIW" firstAttribute="trailing" secondItem="mrj-h6-neX" secondAttribute="trailing" id="1dd-0j-NeH"/>
+                            <constraint firstItem="mWl-eJ-fIW" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mrj-h6-neX" secondAttribute="trailing" constant="8" id="1dd-0j-NeH"/>
                             <constraint firstItem="Stj-Hb-R46" firstAttribute="top" secondItem="M8V-lJ-wOh" secondAttribute="bottom" constant="5" id="2Br-C0-ZTy"/>
                             <constraint firstItem="ZDg-g1-kkG" firstAttribute="centerX" secondItem="UQ5-Nd-VyD" secondAttribute="centerX" id="6Te-G5-evF"/>
                             <constraint firstItem="mrj-h6-neX" firstAttribute="centerX" secondItem="UQ5-Nd-VyD" secondAttribute="centerX" id="AHp-06-ZnQ"/>
@@ -240,7 +240,7 @@
                             <constraint firstItem="Stj-Hb-R46" firstAttribute="centerY" secondItem="UQ5-Nd-VyD" secondAttribute="centerY" id="u3P-Jw-nNN"/>
                             <constraint firstItem="mWl-eJ-fIW" firstAttribute="trailing" secondItem="ZDg-g1-kkG" secondAttribute="trailing" constant="35" id="vZs-SY-IXu"/>
                             <constraint firstItem="pyG-u5-FxK" firstAttribute="top" secondItem="Stj-Hb-R46" secondAttribute="bottom" constant="30" id="w10-5r-Trq"/>
-                            <constraint firstItem="mrj-h6-neX" firstAttribute="leading" secondItem="mWl-eJ-fIW" secondAttribute="leading" id="wPu-FF-RVE"/>
+                            <constraint firstItem="mrj-h6-neX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mWl-eJ-fIW" secondAttribute="leading" constant="8" id="wPu-FF-RVE"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
