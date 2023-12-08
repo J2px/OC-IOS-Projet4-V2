@@ -2,6 +2,8 @@
 //  ViewController.swift
 //  Instagrid
 //
+//  V3
+//
 //  Created by Jimmy JERMIDI on 02/11/2023.
 //
 
@@ -18,6 +20,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var ImgButton3: UIButton!
     @IBOutlet weak var ImgButton4: UIButton!
     
+    @IBOutlet weak var titleLabel: UILabel!{
+        didSet {
+            titleLabel.font = UIFont(name: "ThirstySoftRegular", size: 32)
+        }
+    }
+        
+        
+    @IBOutlet weak var swipeLabel: UILabel!{
+        didSet {
+            swipeLabel.font = UIFont(name: "Delm-Medium", size: 25)
+        }
+    }
+    
+    @IBOutlet var mainView: UIView!
     
     @IBOutlet weak var stackView: UIStackView!
     
@@ -27,26 +43,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //controlGesture(button: ImgButton1)
-        //controlGesture(button: ImgButton2)
-        //controlGesture(button: ImgButton3)
-        //controlGesture(button: ImgButton4)
+        
+        
         setupChoices()
+        NotificationCenter.default.addObserver(self, selector: #selector(setUpSwipe), name: UIDevice.orientationDidChangeNotification, object: nil)
+
         
         imagePicker.delegate = self
         
         
     }
     
-    
-    /*@objc func imageButtonTapped(_ sender: UITapGestureRecognizer) {
-        selectedButton = sender.view as? UIButton
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
-        present(imagePicker, animated: true, completion: nil)
-    }*/
     
     func showImagePicker(with sourceType: UIImagePickerController.SourceType) {
             if UIImagePickerController.isSourceTypeAvailable(sourceType) {
@@ -63,20 +70,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let originalImage = info[.editedImage] as? UIImage, let button = selectedButton {
             button.setImage(originalImage, for: .normal)
-            /*if let croppedImage = resizeAndCropImage(originalImage, toSize: button.bounds.size) {
-             
-             }*/
         }
         picker.dismiss(animated: true, completion: nil)
     }
     
     
-    /*
-    //Remplacer par l'IBAction avec touc up inside
-    private func controlGesture(button : UIButton){
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageButtonTapped(_:)))
-        button.addGestureRecognizer(tapGesture)
-    }*/
     
     private var allOptionsView: [OptionItemView] = []
     
@@ -99,6 +97,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.deselectAll()
             option.isSelected = true
             // TODO: Changer le format de la vue centrale 
+            self.makeChoice(choice: choice)
         }
         NSLayoutConstraint.activate([
             option.widthAnchor.constraint(equalToConstant: 80),
@@ -116,12 +115,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     private func makeChoice(choice: OptionItemView.Choices){
         switch choice{
         case .choice1:
+            ImgButton1.isHidden = false
             ImgButton2.isHidden = true
+            ImgButton3.isHidden = false
+            ImgButton4.isHidden = false
             
         case .choice2:
+            ImgButton1.isHidden = false
+            ImgButton2.isHidden = false
+            ImgButton3.isHidden = false
             ImgButton4.isHidden = true
         case .choice3:
+            ImgButton1.isHidden = false
             ImgButton2.isHidden = false
+            ImgButton3.isHidden = false
             ImgButton4.isHidden = false
         }
         
@@ -152,6 +159,44 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         showImagePicker(with: .photoLibrary)
     }
     
+    @objc func setUpSwipe() {
+            if UIDevice.current.orientation.isPortrait {
+                setRecognizerUp()
+                swipeLabel.text = " Swipe up to share "
+            } else if UIDevice.current.orientation.isLandscape {
+                setRecognizerLeft()
+                swipeLabel.text = " Swipe left to share"
+            }
+        }
+
+
+    
+    
+    private func setRecognizerUp(){
+        let swipeGestureRecognizerUp = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        swipeGestureRecognizerUp.direction = .up
+        
+        mainView.addGestureRecognizer(swipeGestureRecognizerUp)
+    }
+    
+    
+    private func setRecognizerLeft(){
+        let swipeGestureRecognizerLeft = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+        swipeGestureRecognizerLeft.direction = .left
+        
+        mainView.addGestureRecognizer(swipeGestureRecognizerLeft)
+    }
+    
+    
+    @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
+        let renderer = UIGraphicsImageRenderer(size: mainView.bounds.size)
+        let image = renderer.image { ctx in
+            mainView.drawHierarchy(in: mainView.bounds, afterScreenUpdates: true)
+        }
+        let item = [image]
+        let activityController = UIActivityViewController(activityItems: item, applicationActivities: nil)
+        present(activityController, animated: true)
+    }
     
 }
 
