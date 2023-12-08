@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8X8-0w-GYK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8X8-0w-GYK">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -304,10 +304,10 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="ImgButton1" destination="Rik-S4-pbu" id="4YG-g9-cIa"/>
-                        <outlet property="ImgButton2" destination="vkd-op-cCB" id="wzK-kv-BLw"/>
-                        <outlet property="ImgButton3" destination="L0f-iv-s8b" id="IZn-CK-1GT"/>
-                        <outlet property="ImgButton4" destination="fkI-zv-3qz" id="hHQ-hb-glH"/>
+                        <outlet property="imgButton1" destination="Rik-S4-pbu" id="4YG-g9-cIa"/>
+                        <outlet property="imgButton2" destination="vkd-op-cCB" id="wzK-kv-BLw"/>
+                        <outlet property="imgButton3" destination="L0f-iv-s8b" id="IZn-CK-1GT"/>
+                        <outlet property="imgButton4" destination="fkI-zv-3qz" id="hHQ-hb-glH"/>
                         <outlet property="mainView" destination="UQ5-Nd-VyD" id="Omn-sT-WDw"/>
                         <outlet property="stackView" destination="ZDg-g1-kkG" id="NbB-gV-AWY"/>
                         <outlet property="swipeLabel" destination="Stj-Hb-R46" id="J1i-CS-ru2"/>

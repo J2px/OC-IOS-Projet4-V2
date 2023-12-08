@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		215303172AFD172900DE9763 /* OptionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215303162AFD172900DE9763 /* OptionItemView.swift */; };
 		21A5199B2AF3A03D00FE14C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5199A2AF3A03D00FE14C5 /* AppDelegate.swift */; };
 		21A5199D2AF3A03D00FE14C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5199C2AF3A03D00FE14C5 /* SceneDelegate.swift */; };
 		21A5199F2AF3A03D00FE14C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A5199E2AF3A03D00FE14C5 /* ViewController.swift */; };
 		21A519A22AF3A03D00FE14C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21A519A02AF3A03D00FE14C5 /* Main.storyboard */; };
 		21A519A42AF3A04200FE14C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21A519A32AF3A04200FE14C5 /* Assets.xcassets */; };
 		21A519A72AF3A04200FE14C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21A519A52AF3A04200FE14C5 /* LaunchScreen.storyboard */; };
+		C321B4B22B23363D005D44CA /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 21A519AE2AF3AFF900FE14C5 /* ThirstySoftRegular.otf */; };
+		C321B4B32B233675005D44CA /* OptionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215303162AFD172900DE9763 /* OptionItemView.swift */; };
+		C321B4B42B233679005D44CA /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 21A519AF2AF3AFF900FE14C5 /* Delm-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,7 +135,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				21A519A72AF3A04200FE14C5 /* LaunchScreen.storyboard in Resources */,
+				C321B4B42B233679005D44CA /* Delm-Medium.otf in Resources */,
 				21A519A42AF3A04200FE14C5 /* Assets.xcassets in Resources */,
+				C321B4B22B23363D005D44CA /* ThirstySoftRegular.otf in Resources */,
 				21A519A22AF3A03D00FE14C5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,7 +151,7 @@
 			files = (
 				21A5199F2AF3A03D00FE14C5 /* ViewController.swift in Sources */,
 				21A5199B2AF3A03D00FE14C5 /* AppDelegate.swift in Sources */,
-				215303172AFD172900DE9763 /* OptionItemView.swift in Sources */,
+				C321B4B32B233675005D44CA /* OptionItemView.swift in Sources */,
 				21A5199D2AF3A03D00FE14C5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

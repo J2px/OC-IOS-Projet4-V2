@@ -7,17 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "42DA1A4C-4F30-4E70-89F0-79CDADFC5C6C"
+            uuid = "4A7449A6-7277-4B88-A85D-3E8B27D8AFBB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Instagrid/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "makeChoice(choice:)"
-            landmarkType = "7">
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "titleLabel"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
