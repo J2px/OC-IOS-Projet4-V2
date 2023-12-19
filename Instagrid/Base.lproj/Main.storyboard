@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8X8-0w-GYK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8X8-0w-GYK">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -244,14 +244,14 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="vZs-SY-IXu"/>
                                 <exclude reference="1dd-0j-NeH"/>
+                                <exclude reference="vZs-SY-IXu"/>
                                 <exclude reference="jnz-sl-akC"/>
                                 <exclude reference="AOy-vl-099"/>
                                 <exclude reference="AHp-06-ZnQ"/>
                                 <exclude reference="bMu-em-9cq"/>
-                                <exclude reference="emI-gw-9T8"/>
                                 <exclude reference="wPu-FF-RVE"/>
+                                <exclude reference="emI-gw-9T8"/>
                                 <exclude reference="B3f-5h-eoi"/>
                                 <exclude reference="PQz-pj-IWa"/>
                                 <exclude reference="sdk-gd-FXs"/>
@@ -312,6 +312,7 @@
                         <outlet property="stackView" destination="ZDg-g1-kkG" id="NbB-gV-AWY"/>
                         <outlet property="swipeLabel" destination="Stj-Hb-R46" id="J1i-CS-ru2"/>
                         <outlet property="titleLabel" destination="mrj-h6-neX" id="BZb-bf-tVc"/>
+                        <outlet property="viewPicture" destination="pyG-u5-FxK" id="2iB-0C-tda"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9O-Wa-bfz" sceneMemberID="firstResponder"/>

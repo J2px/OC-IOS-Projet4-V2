@@ -34,6 +34,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     
+    enum Orientation {
+        case portrait, landscape, inside
+    }
+    
+    @IBOutlet weak var viewPicture: UIStackView!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -143,6 +148,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
+        var orientation = getOrientation()
+        moveView(orientation: orientation)
         let renderer = UIGraphicsImageRenderer(size: mainView.bounds.size)
         let image = renderer.image { ctx in
             mainView.drawHierarchy(in: mainView.bounds, afterScreenUpdates: true)
@@ -150,6 +157,47 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let item = [image]
         let activityController = UIActivityViewController(activityItems: item, applicationActivities: nil)
         present(activityController, animated: true)
+        
+        activityController.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed: Bool, arrayReturnedItems: [Any]?, error: Error?) in
+            if completed {
+                self.moveView(orientation: .inside)
+            } else {
+                self.moveView(orientation: .inside)
+            }
+        }
+    }
+    
+    private func getOrientation() -> Orientation {
+        var orientation: Orientation
+            
+            if UIDevice.current.orientation.isPortrait {
+                orientation = .portrait
+            } else if UIDevice.current.orientation.isLandscape {
+                orientation = .landscape
+            } else {
+                orientation = .inside
+            }
+            
+            return orientation
+    }
+    
+    private func moveView(orientation: Orientation){
+        switch orientation {
+        case .portrait:
+            UIView.animate(withDuration: 0.5) {
+                self.viewPicture.transform = CGAffineTransform(translationX: 0, y: -self.viewPicture.frame.height*2)
+            }
+        case .landscape:
+            UIView.animate(withDuration: 0.5) {
+                self.viewPicture.transform = CGAffineTransform(translationX: -self.viewPicture.frame.height*2, y: 0)
+            
+            }
+        case .inside:
+            UIView.animate(withDuration: 0.5) {
+                self.viewPicture.transform = .identity
+            }
+        }
+        
     }
     
     
