@@ -31,6 +31,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             swipeLabel.font = UIFont(name: "Delm-Medium", size: 25)
         }
     }
+    @IBOutlet weak var arrowImg: UIImageView!
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     
@@ -125,10 +126,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if UIDevice.current.orientation.isPortrait {
             setRecognizerUp()
             swipeLabel.text = " Swipe up to share "
-        } else if UIDevice.current.orientation.isLandscape {
+            arrowImg.image = UIImage(named: "Arrow Up")        } else if UIDevice.current.orientation.isLandscape {
             setRecognizerLeft()
             swipeLabel.text = " Swipe left to share"
-        }
+            arrowImg.image = UIImage(named: "Arrow Left")        }
     }
     
     private func setRecognizerUp(){
@@ -148,7 +149,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     @objc private func didSwipe(_ sender: UISwipeGestureRecognizer) {
-        var orientation = getOrientation()
+        let orientation = getOrientation()
         moveView(orientation: orientation)
         let renderer = UIGraphicsImageRenderer(size: mainView.bounds.size)
         let image = renderer.image { ctx in

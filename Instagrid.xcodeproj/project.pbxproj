@@ -43,6 +43,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		212F9EB02B3330A4009CF1F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				215303162AFD172900DE9763 /* OptionItemView.swift */,
+				21A519A02AF3A03D00FE14C5 /* Main.storyboard */,
+				21A519A32AF3A04200FE14C5 /* Assets.xcassets */,
+				21A519A52AF3A04200FE14C5 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		212F9EB12B3330F3009CF1F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				21A5199E2AF3A03D00FE14C5 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		21A5198E2AF3A03D00FE14C5 = {
 			isa = PBXGroup;
 			children = (
@@ -62,13 +81,10 @@
 		21A519992AF3A03D00FE14C5 /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				215303162AFD172900DE9763 /* OptionItemView.swift */,
 				21A5199A2AF3A03D00FE14C5 /* AppDelegate.swift */,
 				21A5199C2AF3A03D00FE14C5 /* SceneDelegate.swift */,
-				21A5199E2AF3A03D00FE14C5 /* ViewController.swift */,
-				21A519A02AF3A03D00FE14C5 /* Main.storyboard */,
-				21A519A32AF3A04200FE14C5 /* Assets.xcassets */,
-				21A519A52AF3A04200FE14C5 /* LaunchScreen.storyboard */,
+				212F9EB12B3330F3009CF1F2 /* Controller */,
+				212F9EB02B3330A4009CF1F2 /* View */,
 				21A519A82AF3A04200FE14C5 /* Info.plist */,
 				21A519AF2AF3AFF900FE14C5 /* Delm-Medium.otf */,
 				21A519AE2AF3AFF900FE14C5 /* ThirstySoftRegular.otf */,
